@@ -7,6 +7,7 @@ import { ActitudesComponent } from './segundaentrega/actitudes/actitudes.compone
 import { ExamenesComponent } from './segundaentrega/examenes/examenes.component';
 import { PracticasComponent } from './segundaentrega/practicas/practicas.component';
 import { PersonalComponent } from './segundaentrega/personal/personal.component';
+import { RestaurantesComponent } from './segundaentrega/restaurantes/restaurantes.component';
 
 const routes: Routes = [ 
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'actitudes', component: ActitudesComponent},
   {path: 'practicas', component: PracticasComponent},
   {path: 'examenes', component: ExamenesComponent},
+  {path: 'restaurantes', component:RestaurantesComponent}
 ];
 
 @NgModule({

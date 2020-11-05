@@ -1,3 +1,4 @@
+using System.Security.Permissions;
 using System;
 using Entidad;
 
@@ -10,6 +11,10 @@ namespace segundaEntrega.Models
         public int Edad {get;set;}
         public string Sexo {get;set;}
         public string Telefono {get;set;}
+        public string Email {get;set;}
+        public string EstadoCivil {get;set;}
+        public string PaisProcedencia { get; set; }
+        public string NivelEducativo { get; set; }
     }
 
     
@@ -26,8 +31,11 @@ namespace segundaEntrega.Models
             Apellidos = persona.Apellidos;
             Sexo = persona.Sexo;
             Edad = persona.Edad;
-            Sexo = persona.Sexo;
             Telefono = persona.Telefono;
+            Email = persona.Email;
+            EstadoCivil = persona.EstadoCivil;
+            PaisProcedencia = persona.PaisProcedencia;
+            NivelEducativo=persona.NivelEducativo;
             
         }
     }

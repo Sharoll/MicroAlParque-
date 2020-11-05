@@ -27,5 +27,17 @@ namespace Entidad
         [Column(TypeName = "nvarchar(15)")]
         public string Telefono { get; set; }
 
+        [Column(TypeName = "nvarchar(15)")]
+        public string Email { get; set; }
+
+        [Column(TypeName = "nvarchar(15)")]
+        public string EstadoCivil { get; set; }
+
+        [Column(TypeName = "nvarchar(15)")]
+        public string PaisProcedencia { get; set; }
+
+        [Column(TypeName = "nvarchar(15)")]
+        public string NivelEducativo { get; set; }
+
     }
 }

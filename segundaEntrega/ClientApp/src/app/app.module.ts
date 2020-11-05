@@ -18,6 +18,7 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { PracticasComponent } from './segundaentrega/practicas/practicas.component';
 import { PersonalComponent } from './segundaentrega/personal/personal.component';
 import { PersonaService } from './services/persona.service';
+import { RestaurantesService } from './services/restaurantes.service';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { PersonaService } from './services/persona.service';
     ]),
     AppRoutingModule
   ],
-  providers: [PersonaService],
+  providers: [PersonaService, RestaurantesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

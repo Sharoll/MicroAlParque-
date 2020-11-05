@@ -56,6 +56,10 @@ namespace segundaEntrega.Controllers
                 persona.Sexo = personaInput.Sexo;
                 persona.Edad = personaInput.Edad; 
                 persona.Telefono=personaInput.Telefono;   
+                persona.Email = personaInput.Email;
+                persona.EstadoCivil=personaInput.EstadoCivil;
+                persona.PaisProcedencia = personaInput.PaisProcedencia;
+                persona.NivelEducativo=personaInput.NivelEducativo;
             return persona;
         }
     }

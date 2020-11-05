@@ -1,9 +1,13 @@
 export class Persona {
-    Identificacion: string;
-    Nombres: string;
-    Apellidos: string;
-    Edad: number;
-    Sexo: string;
-    Telefono: string;
+    identificacion: string;
+    nombres: string;
+    apellidos: string;
+    edad: number;
+    sexo: string;
+    telefono: string;
+    email: string;
+    estadoCivil: string;
+    paisProcedencia: string;
+    nivelEducativo: string;
 }
 
