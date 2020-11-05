@@ -19,18 +19,35 @@ export class RestaurantesService {
     this.baseUrl = baseUrl;
     }
     get(): Observable<Restaurantes[]> {
-    return this.http.get<Restaurantes[]>(this.baseUrl + 'api/Restaurantes')
+    return this.http.get<Restaurantes[]>(this.baseUrl + 'api/Restaurante')
     .pipe(
     tap(_ => this.handleErrorService.log('datos enviados')),
     catchError(this.handleErrorService.handleError<Restaurantes[]>('Consulta Restaurantes', null))
     );
     }
     post(restaurante: Restaurantes): Observable<Restaurantes> {
-    return this.http.post<Restaurantes>(this.baseUrl + 'api/Restaurantes', restaurante)
-    .pipe(
-    tap(_ => this.handleErrorService.log('datos enviados')),
-    catchError(this.handleErrorService.handleError<Restaurantes>('Registrar Restaurantes', null))
-    );
+
+      return this.http.post<Restaurantes>(this.baseUrl + 'api​/Restaurante', restaurante)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos enviados')),
+        catchError(this.handleErrorService.handleError<Restaurantes>('Registrar Restaurantes', null))
+      );
+    }
+
+    Todos(): Observable<Restaurantes[]>{
+      return this.http.get<Restaurantes[]>(this.baseUrl+ 'api/Restaurante')
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos enviados')),
+        catchError(this.handleErrorService.handleError<Restaurantes[]>('Consulta Restaurantes', null))
+      );
+    }
+  
+    registrar(r: Restaurantes): Observable<Restaurantes> {
+      return this.http.post<Restaurantes>(this.baseUrl + 'api/Restaurante', r)
+        .pipe(
+          tap(_ => this.handleErrorService.log('datos enviados')),
+          catchError(this.handleErrorService.handleError<Restaurantes>('Registrar Restaurantes', null))
+        );
     }
     
 }

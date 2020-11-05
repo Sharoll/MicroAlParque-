@@ -10,3 +10,5 @@ export class Restaurantes {
     añoFuncionamiento: number;
     especialidad: string;
 }
+
+

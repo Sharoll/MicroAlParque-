@@ -36,6 +36,7 @@ namespace segundaEntrega.Controllers
         // POST: api/Restaurante
         [HttpPost]
         public ActionResult<RestauranteViewModel> Post(RestauranteInputModel restauranteInput){
+            
             Restaurante restaurante = MapearRestaurante(restauranteInput);
             var response = _restauranteService.Guardar(restaurante);
 
