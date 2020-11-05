@@ -21,6 +21,8 @@ import { PersonaService } from './services/persona.service';
 import { RestaurantesService } from './services/restaurantes.service';
 import { PersonaConsultaComponent } from './segundaentrega/persona-consulta/persona-consulta.component';
 import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
     PersonalComponent,
     PersonaConsultaComponent,
     FiltroPersonaPipe,
+    AlertModalComponent,
     
   ],
   imports: [
@@ -48,8 +51,10 @@ import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
     FormsModule,
     RouterModule.forRoot([
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
+  entryComponents:[AlertModalComponent],
   providers: [PersonaService, RestaurantesService],
   bootstrap: [AppComponent]
 })
