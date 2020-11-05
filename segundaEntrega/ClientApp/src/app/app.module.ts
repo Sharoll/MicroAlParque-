@@ -19,6 +19,8 @@ import { PracticasComponent } from './segundaentrega/practicas/practicas.compone
 import { PersonalComponent } from './segundaentrega/personal/personal.component';
 import { PersonaService } from './services/persona.service';
 import { RestaurantesService } from './services/restaurantes.service';
+import { PersonaConsultaComponent } from './segundaentrega/persona-consulta/persona-consulta.component';
+import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { RestaurantesService } from './services/restaurantes.service';
     InicioSesionComponent,
     PracticasComponent,
     PersonalComponent,
+    PersonaConsultaComponent,
+    FiltroPersonaPipe,
     
   ],
   imports: [

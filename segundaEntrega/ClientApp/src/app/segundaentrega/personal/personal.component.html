@@ -6,7 +6,12 @@
           <div class="form-group row">
               <label for="nombre" class="col-form-label col-sm-4">Identificacion:</label>
             <div class="col-sm-8">
-          <input type="text" name="identificacion" formControlName="identificacion" class="form-control">
+              <input type="text"  name="identificacion" formControlName="identificacion" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.identificacion.errors}" />
+
+                  <div *ngIf="control.identificacion.errors" class="invalid-feedback">
+                      <div *ngIf ="control.identificacion.errors.required">Se require la identificacion</div>
+                      </div>
             </div>
           </div>
       </div>
@@ -68,17 +73,17 @@
     </div>
       </form>
     </section>
-       <button type="button" class="btn btn-danger  btn-lg btn-block" (click)="onSubmit()" [disabled]="formGroup.invalid">Registrar</button>
+       <button name="boton2" type="button" class="btn btn-danger  btn-block" (click)="onSubmit()" [disabled]="formGroup.invalid">Registrar</button>
 
     <section class="form-registro2">
       <form [formGroup]= "formGroup">
 
         <div class="col-xs-10 col-sm-8 col-md-8">
           <div class="form-group row">
-              <label for="nombre" class="col-form-label col-sm-4">Telefono:</label>
+              <label for ="nombre" class="col-form-label col-sm-4">Telefono:</label>
             <div class="col-sm-8">
               <input type="text"  name="telefono" formControlName="telefono"  class="form-control"
-              [ngClass]="{ 'is-invalid':  control.telefono.errors}" />
+              [ngClass]="{ 'is-invalid': control.telefono.errors }" />
 
               <div *ngIf="control.telefono.errors" class="invalid-feedback">
               <div *ngIf="control.telefono.errors.required">Se require el telefono</div>
@@ -143,6 +148,6 @@
           </div>
       </form>
 
-       <button type="button" class="btn btn-danger btn-lg btn-block" (click)="add()">Cancelar</button>
+       <button type="button" class="btn btn-danger btn-block" (click)="add()">Cancelar</button>
     </section>
 </section>
