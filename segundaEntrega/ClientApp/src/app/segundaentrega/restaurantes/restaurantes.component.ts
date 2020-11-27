@@ -75,5 +75,4 @@ export class RestaurantesComponent implements OnInit {
     return this.formGroup.controls;
   }
     
-
 }

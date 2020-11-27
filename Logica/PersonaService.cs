@@ -22,7 +22,7 @@ namespace Logica
             {
                 var personaBuscada = _context.Personas.Find(persona.Identificacion);
                 if(personaBuscada != null){
-                    return new GuardarPersonaResponse("Error, ya registrarada");
+                    return new GuardarPersonaResponse("Error, la persona ya se encuentra registrarada");
                 }
                 _context.Personas.Add(persona);
                 _context.SaveChanges();
@@ -41,7 +41,7 @@ namespace Logica
             return personas;
         }
 
-        public class GuardarPersonaResponse 
+    public class GuardarPersonaResponse 
     {
         public GuardarPersonaResponse(Persona persona)
         {

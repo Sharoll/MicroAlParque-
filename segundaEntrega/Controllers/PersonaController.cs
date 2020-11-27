@@ -1,4 +1,5 @@
 using System.Runtime.ExceptionServices;
+using System.Xml.Linq;
 using System.ComponentModel;
 using System.IO.Pipes;
 using System.Security.Permissions;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Entidad;
 using Logica;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -42,7 +44,12 @@ namespace segundaEntrega.Controllers
 
             if (response.Error)
             {
-            return BadRequest(response.Mensaje);
+                ModelState.AddModelError("Guardar Persona", response.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+            return BadRequest(problemDetails);
             }
             return Ok(response.Persona);
         }
