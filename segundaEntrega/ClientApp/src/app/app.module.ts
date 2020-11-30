@@ -23,6 +23,7 @@ import { PersonaConsultaComponent } from './segundaentrega/persona-consulta/pers
 import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
+import { ReportesComponent } from './segundaentrega/reportes/reportes.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     PersonaConsultaComponent,
     FiltroPersonaPipe,
     AlertModalComponent,
+    ReportesComponent,
     
   ],
   imports: [

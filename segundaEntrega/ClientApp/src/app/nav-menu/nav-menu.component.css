@@ -27,11 +27,32 @@ body{
   margin-bottom: 10px;
 }
 
+.Sub-Menu{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.37);
+}
+
+.btnbarra{
+  height: 2rem;
+  color: rgb(255, 255, 255);
+  font-size: 0.4cm;
+  background: transparent;
+  border: none;
+}
+.btnbarra:hover{
+  color: black;
+  background-color: rgb(250, 81, 81);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btnbarra:focus {
+  outline: none; 
+}
+
 .Sidebar a{
   color: #fff;
   display: block;
   width: 100%;
-  line-height: 60px;
+  line-height: 55px;
   text-decoration: none;
   padding-left: 40px;
   box-sizing: border-box;
@@ -45,3 +66,9 @@ body{
 .Sidebar i{
   padding-right: 10px;
 }
+ 
+.Ocultar{
+  display: none;
+}
+ 
+  

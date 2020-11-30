@@ -9,6 +9,7 @@ import { PracticasComponent } from './segundaentrega/practicas/practicas.compone
 import { PersonalComponent } from './segundaentrega/personal/personal.component';
 import { PersonaConsultaComponent} from './segundaentrega/persona-consulta/persona-consulta.component'
 import { RestaurantesComponent } from './segundaentrega/restaurantes/restaurantes.component';
+import { ReportesComponent } from './segundaentrega/reportes/reportes.component';
 
 const routes: Routes = [ 
   {path: '', component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'actitudes', component: ActitudesComponent},
   {path: 'practicas', component: PracticasComponent},
   {path: 'examenes', component: ExamenesComponent},
-  {path: 'restaurantes', component:RestaurantesComponent}
+  {path: 'restaurantes', component:RestaurantesComponent},
+  {path: 'reportes', component:ReportesComponent}
 ];
 
 @NgModule({
