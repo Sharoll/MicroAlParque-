@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using System.Runtime.ExceptionServices;
 using System.Xml.Linq;
 using System.ComponentModel;
@@ -53,7 +54,7 @@ namespace segundaEntrega.Controllers
             }
             return Ok(response.Persona);
         }
-
+        
         private Persona MapearPersona(PersonaInputModel personaInput){
             var persona = new Persona();
             
@@ -67,6 +68,7 @@ namespace segundaEntrega.Controllers
                 persona.EstadoCivil=personaInput.EstadoCivil;
                 persona.PaisProcedencia = personaInput.PaisProcedencia;
                 persona.NivelEducativo=personaInput.NivelEducativo;
+                persona.Idrestaurante = personaInput.Idrestaurante;
             return persona;
         }
     }

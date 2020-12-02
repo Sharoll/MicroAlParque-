@@ -35,6 +35,9 @@ namespace Datos.Migrations
                     b.Property<string>("EstadoCivil")
                         .HasColumnType("nvarchar(15)");
 
+                    b.Property<string>("Idrestaurante")
+                        .HasColumnType("nvarchar(15)");
+
                     b.Property<string>("NivelEducativo")
                         .HasColumnType("nvarchar(15)");
 

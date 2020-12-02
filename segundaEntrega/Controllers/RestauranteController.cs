@@ -46,6 +46,16 @@ namespace segundaEntrega.Controllers
             }
             return Ok(response.Restaurante);
         }
+        [HttpGet("{nombre}")]
+        public ActionResult<RestauranteViewModel> Get(string nombre)
+        {
+            var response = _restauranteService.Buscar(nombre);
+            if(response.Error)
+            {
+                return BadRequest(response.Mensaje);
+            }
+            return Ok(response.Restaurante);
+        }
 
         private Restaurante MapearRestaurante(RestauranteInputModel restauranteInput){
             var restaurante = new Restaurante();

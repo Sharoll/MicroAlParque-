@@ -38,6 +38,13 @@ namespace Logica
 
             return restaurantes;
         }
+        public GuardarRestauranteResponse Buscar(string nombre){
+            Restaurante restaurante = _context.Restaurantes.Find(nombre);
+            if(restaurante == null){
+                return new GuardarRestauranteResponse("No existe");
+            }
+            return new GuardarRestauranteResponse(restaurante);
+        }
 
         public class GuardarRestauranteResponse 
     {

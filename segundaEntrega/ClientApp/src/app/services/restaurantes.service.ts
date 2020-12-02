@@ -41,9 +41,16 @@ export class RestaurantesService {
         catchError(this.handleErrorService.handleError<Restaurantes[]>('Consulta Restaurantes', null))
       );
     }
-  
-    registrar(r: Restaurantes): Observable<Restaurantes> {
-      return this.http.post<Restaurantes>(this.baseUrl + 'api/Restaurante', r)
+    buscar(idrestaurante: string): Observable<Restaurantes>
+    {
+      return this.http.get<Restaurantes>(this.baseUrl+'api/Persona/'+idrestaurante)
+      .pipe(
+        tap(_ => this.handleErrorService.log('Encontrado')),
+        catchError(this.handleErrorService.handleError<Restaurantes>('Buscar restaurante', null))
+      );
+    }
+    registrar(idrestaurante: Restaurantes): Observable<Restaurantes> {
+      return this.http.post<Restaurantes>(this.baseUrl + 'api/Restaurante', idrestaurante)
         .pipe(
           tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Restaurantes>('Registrar Restaurantes', null))

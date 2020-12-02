@@ -34,6 +34,7 @@ namespace Logica
             }
             finally { }
         }
+        
         public List<Persona> ConsultarTodos()
         {
             List<Persona> personas = _context.Personas.ToList();

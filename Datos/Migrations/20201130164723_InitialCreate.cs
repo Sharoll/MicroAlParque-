@@ -19,7 +19,8 @@ namespace Datos.Migrations
                     Email = table.Column<string>(type: "nvarchar(15)", nullable: true),
                     EstadoCivil = table.Column<string>(type: "nvarchar(15)", nullable: true),
                     PaisProcedencia = table.Column<string>(type: "nvarchar(15)", nullable: true),
-                    NivelEducativo = table.Column<string>(type: "nvarchar(15)", nullable: true)
+                    NivelEducativo = table.Column<string>(type: "nvarchar(15)", nullable: true),
+                    Idrestaurante = table.Column<string>(type: "nvarchar(15)", nullable: true)
                 },
                 constraints: table =>
                 {

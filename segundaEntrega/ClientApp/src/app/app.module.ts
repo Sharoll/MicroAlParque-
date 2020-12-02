@@ -24,6 +24,7 @@ import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { ReportesComponent } from './segundaentrega/reportes/reportes.component';
+import { FiltroRestaurantePipe } from './pipe/filtro-restaurante.pipe';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ReportesComponent } from './segundaentrega/reportes/reportes.component'
     FiltroPersonaPipe,
     AlertModalComponent,
     ReportesComponent,
+    FiltroRestaurantePipe,
     
   ],
   imports: [

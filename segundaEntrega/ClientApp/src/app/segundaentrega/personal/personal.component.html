@@ -71,6 +71,19 @@
           </div>
         </div>
     </div>
+    <div class="col-xs-10 col-sm-8 col-md-8">
+      <div class="form-group row">
+          <label for ="nombre" class="col-form-label col-sm-4">Telefono:</label>
+        <div class="col-sm-8">
+          <input type="text"  name="telefono" formControlName="telefono"  class="form-control"
+          [ngClass]="{ 'is-invalid':  control.telefono.touched && control.telefono.errors}" />
+
+          <div *ngIf="control.telefono.errors" class="invalid-feedback">
+          <div *ngIf="control.telefono.errors.required">Se require el telefono</div>
+          </div>
+        </div>
+      </div>
+  </div>  
       </form>
     </section>
        <button name="boton2" type="button" class="btn btn-danger  btn-block" (click)="onSubmit()" [disabled]="formGroup.invalid">Registrar</button>
@@ -78,19 +91,7 @@
     <section class="form-registro2">
       <form [formGroup]= "formGroup">
 
-        <div class="col-xs-10 col-sm-8 col-md-8">
-          <div class="form-group row">
-              <label for ="nombre" class="col-form-label col-sm-4">Telefono:</label>
-            <div class="col-sm-8">
-              <input type="text"  name="telefono" formControlName="telefono"  class="form-control"
-              [ngClass]="{ 'is-invalid':  control.telefono.touched && control.telefono.errors}" />
-
-              <div *ngIf="control.telefono.errors" class="invalid-feedback">
-              <div *ngIf="control.telefono.errors.required">Se require el telefono</div>
-              </div>
-            </div>
-          </div>
-      </div>  
+        
           <div class="col-xs-10 col-sm-8 col-md-8">
               <div class="form-group row">
                   <label for="nombre" class="col-form-label col-sm-4">E-mail:</label>
@@ -146,8 +147,35 @@
                 </div>
               </div>
           </div>
-      </form>
+          <div class="col-xs-10 col-sm-8 col-md-8">
+            <div class ="form-group row">
+                <label for="nombre" class="col-form-label col-sm-4">NIT restaurante:</label>
+              <div class="col-sm-8">
+                <input type="text"  name="tiporestaurante" formControlName="tiporestaurante"  class="form-control"
+                [ngClass]="{ 'is-invalid':  control.tiporestaurante.touched && control.tiporestaurante.errors}" />
 
+                <div *ngIf="control.tiporestaurante.errors" class="invalid-feedback">
+                <div *ngIf="control.tiporestaurante.errors.required">Se require el id</div>
+                </div>
+              </div>
+            </div>
+        </div>
+          <!-- <div class="col-xs-10 col-sm-8 col-md-8">
+            <div class ="form-group row">
+              <label for="nombre" class="col-form-label col-sm-4">NIT restaurante: </label>
+              <div class="col-sm-8">
+                <select name="tiporestaurante" class="form-control" formControlName="tiporestaurante" 
+                  [ngClass]="{ 'is-invalid': control.tiporestaurante.touched && control.tiporestaurante.errors}">
+                    
+                  <option *ngFor="let restaurante of restaurantes; index as i " value="{i}">
+                      {{restaurante.nit}}</option>
+                </select>
+              </div>
+            </div>
+        </div> -->
+      </form>
+        
+       
        <button type="button" class="btn btn-danger btn-block" (click)="add()">Cancelar</button>
     </section>
 </section>

@@ -4,6 +4,8 @@ import { PersonaService} from '../../services/persona.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { Restaurantes } from '../models/restaurantes';
+import { RestaurantesService } from 'src/app/services/restaurantes.service';
 
 
 @Component({
@@ -14,11 +16,17 @@ import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.compo
 export class PersonalComponent implements OnInit {
   formGroup: FormGroup;
   persona: Persona;
+  searchText: string;
+  restaurantes: Restaurantes[];
+  restaurante: Restaurantes;
 
-  constructor(private personaService: PersonaService, private formBuilder: FormBuilder, private modalService: NgbModal) { }
+  constructor(private personaService: PersonaService,private restauranteService:RestaurantesService,
+     private formBuilder: FormBuilder, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.persona = new Persona();
+    //this.restaurante = new Restaurantes();
+    //this.consultarRestaurantes();
     this.buildForm();
   }
 
@@ -32,7 +40,9 @@ export class PersonalComponent implements OnInit {
     this.persona.email = '';
     this.persona.estadoCivil = '';
     this.persona.paisProcedencia = '';
+    this.persona.idrestaurante ='';
     this.persona.nivelEducativo = '';
+    
     
     this.formGroup = this.formBuilder.group({
       identificacion: [this.persona.identificacion, Validators.required],
@@ -44,7 +54,9 @@ export class PersonalComponent implements OnInit {
       email: [this.persona.email, Validators.required],
       estadoCivil: [this.persona.estadoCivil, Validators.required],
       paisProcedencia: [this.persona.paisProcedencia, Validators.required],
+      tiporestaurante: [this.persona.idrestaurante, Validators.required],
       nivelEducativo: [this.persona.nivelEducativo, Validators.required]
+
     });
    
   }
@@ -69,17 +81,42 @@ export class PersonalComponent implements OnInit {
 
   add(){
     this.persona = this.formGroup.value;
-    this.personaService.post(this.persona).subscribe(p => {
-      if (p != null) {
-        const messageBox = this.modalService.open(AlertModalComponent);
-        messageBox.componentInstance.title="Resultado Operacion";
-        messageBox.componentInstance.message ='Persona Creada!'
-        this.persona = p;
-      }
-      });
-    }
+    console.log("NIT: "+this.persona.idrestaurante+"  ID: "+this.persona.identificacion);
+  /*   this.BuscarIdrestaurante(this.persona.idrestaurante);
+
+    if(this.restaurante!=null){ */
+      this.personaService.post(this.persona).subscribe(p => {
+        if (p != null) {
+          const messageBox = this.modalService.open(AlertModalComponent);
+          messageBox.componentInstance.title="Resultado Operacion";
+          messageBox.componentInstance.message ='Persona Creada!'
+          this.persona = p;
+        }
+        });
+    /* }else{
+      const messageBox = this.modalService.open(AlertModalComponent);
+          messageBox.componentInstance.title="Resultado Operacion";
+          messageBox.componentInstance.message ='NIT RESTAURANTE NO EXISTE!'
+    } */
+
     
+    }
+    BuscarIdrestaurante(idrestaurante: string){
+      this.restauranteService.buscar(idrestaurante).subscribe( r => {
+        this.restaurante = r;
+      }
+
+      );
+      
+    }
+
     get control() { 
       return this.formGroup.controls;
+    }
+
+    consultarRestaurantes(){
+      this.restauranteService.get().subscribe(result=>{
+        this.restaurantes=result;
+      });
     }
 }

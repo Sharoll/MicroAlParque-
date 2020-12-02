@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(PersonaContext))]
-    [Migration("20201105035145_InitialCreate")]
+    [Migration("20201130164723_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,9 @@ namespace Datos.Migrations
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("EstadoCivil")
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<string>("Idrestaurante")
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("NivelEducativo")

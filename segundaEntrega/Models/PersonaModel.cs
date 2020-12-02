@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.IO.Pipes;
+using System.Data.Common;
 using System.Security.AccessControl;
 using System.Security.Permissions;
 using System;
@@ -27,6 +30,8 @@ namespace segundaEntrega.Models
         public string PaisProcedencia { get; set; }
         [Required (ErrorMessage = "El nivel educativo es requerido")]
         public string NivelEducativo { get; set; }
+        [Required (ErrorMessage = "El NIT restaurante es requerido")]
+        public string Idrestaurante { get; set; }
     }
 
     public class validarSexo : ValidationAttribute{
@@ -59,6 +64,7 @@ namespace segundaEntrega.Models
             EstadoCivil = persona.EstadoCivil;
             PaisProcedencia = persona.PaisProcedencia;
             NivelEducativo=persona.NivelEducativo;
+            Idrestaurante = persona.Idrestaurante;
             
         }
     }

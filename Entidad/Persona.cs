@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Data;
+using System.IO;
 using System.Security.AccessControl;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -38,6 +39,10 @@ namespace Entidad
 
         [Column(TypeName = "nvarchar(15)")]
         public string NivelEducativo { get; set; }
+
+        
+        [Column(TypeName = "nvarchar(15)")]
+        public string Idrestaurante { get; set; }
 
     }
 }
