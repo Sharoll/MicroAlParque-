@@ -9,6 +9,6 @@ export class Persona {
     estadoCivil: string;
     paisProcedencia: string;
     nivelEducativo: string;
-    idrestaurante:string;
+    Idrestaurante:string;
 }
 

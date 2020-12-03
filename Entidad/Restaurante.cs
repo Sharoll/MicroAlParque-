@@ -7,7 +7,7 @@ namespace Entidad
     public class Restaurante
     {
         [Key]
-        [Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(15)")]
         public string NIT { get; set; }
         
         [Column(TypeName = "varchar(20)")]

@@ -25,23 +25,23 @@ namespace Entidad
         [Column(TypeName = "varchar(10)")]
         public string Sexo { get; set; }
 
-        [Column(TypeName = "nvarchar(15)")]
+        [Column(TypeName = "varchar(15)")]
         public string Telefono { get; set; }
 
-        [Column(TypeName = "nvarchar(15)")]
+        [Column(TypeName = "varchar(15)")]
         public string Email { get; set; }
 
-        [Column(TypeName = "nvarchar(15)")]
+        [Column(TypeName = "varchar(15)")]
         public string EstadoCivil { get; set; }
 
-        [Column(TypeName = "nvarchar(15)")]
+        [Column(TypeName = "varchar(15)")]
         public string PaisProcedencia { get; set; }
 
-        [Column(TypeName = "nvarchar(15)")]
+        [Column(TypeName = "varchar(15)")]
         public string NivelEducativo { get; set; }
 
         
-        [Column(TypeName = "nvarchar(15)")]
+        [Column(TypeName = "varchar(15)")]
         public string Idrestaurante { get; set; }
 
     }

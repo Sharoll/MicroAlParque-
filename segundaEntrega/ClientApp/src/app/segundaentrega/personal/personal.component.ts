@@ -40,7 +40,7 @@ export class PersonalComponent implements OnInit {
     this.persona.email = '';
     this.persona.estadoCivil = '';
     this.persona.paisProcedencia = '';
-    this.persona.idrestaurante ='';
+    this.persona.Idrestaurante ='';
     this.persona.nivelEducativo = '';
     
     
@@ -54,7 +54,7 @@ export class PersonalComponent implements OnInit {
       email: [this.persona.email, Validators.required],
       estadoCivil: [this.persona.estadoCivil, Validators.required],
       paisProcedencia: [this.persona.paisProcedencia, Validators.required],
-      tiporestaurante: [this.persona.idrestaurante, Validators.required],
+      Idrestaurante: [this.persona.Idrestaurante, Validators.required],
       nivelEducativo: [this.persona.nivelEducativo, Validators.required]
 
     });
@@ -81,7 +81,7 @@ export class PersonalComponent implements OnInit {
 
   add(){
     this.persona = this.formGroup.value;
-    console.log("NIT: "+this.persona.idrestaurante+"  ID: "+this.persona.identificacion);
+    console.log("NIT: "+this.persona.Idrestaurante+"  ID: "+this.persona.identificacion);
   /*   this.BuscarIdrestaurante(this.persona.idrestaurante);
 
     if(this.restaurante!=null){ */

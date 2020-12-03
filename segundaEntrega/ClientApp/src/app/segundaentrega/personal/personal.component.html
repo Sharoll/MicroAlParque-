@@ -151,11 +151,11 @@
             <div class ="form-group row">
                 <label for="nombre" class="col-form-label col-sm-4">NIT restaurante:</label>
               <div class="col-sm-8">
-                <input type="text"  name="tiporestaurante" formControlName="tiporestaurante"  class="form-control"
-                [ngClass]="{ 'is-invalid':  control.tiporestaurante.touched && control.tiporestaurante.errors}" />
+                <input type="text"  name="Idrestaurante" formControlName="Idrestaurante"  class="form-control"
+                [ngClass]="{ 'is-invalid':  control.Idrestaurante.touched && control.Idrestaurante.errors}" />
 
-                <div *ngIf="control.tiporestaurante.errors" class="invalid-feedback">
-                <div *ngIf="control.tiporestaurante.errors.required">Se require el id</div>
+                <div *ngIf="control.Idrestaurante.errors" class="invalid-feedback">
+                <div *ngIf="control.Idrestaurante.errors.required">Se require el id</div>
                 </div>
               </div>
             </div>
@@ -167,7 +167,7 @@
                 <select name="tiporestaurante" class="form-control" formControlName="tiporestaurante" 
                   [ngClass]="{ 'is-invalid': control.tiporestaurante.touched && control.tiporestaurante.errors}">
                     
-                  <option *ngFor="let restaurante of restaurantes; index as i " value="{i}">
+                  <option *ngFor="let restaurante of restaurantes; index as i " value="restaurante.nit">
                       {{restaurante.nit}}</option>
                 </select>
               </div>
